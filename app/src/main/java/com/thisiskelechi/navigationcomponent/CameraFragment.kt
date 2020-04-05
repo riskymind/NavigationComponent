@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_camera.*
+import kotlin.random.Random
 
 /**
  * A simple [Fragment] subclass.
@@ -19,4 +22,15 @@ class CameraFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_camera, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        button_photos.setOnClickListener {
+            val random = Random
+            val nextAction = CameraFragmentDirections.nextAction()
+            nextAction.setNumOfPhotos(random.nextInt(100))
+
+            Navigation.findNavController(it).navigate(nextAction)
+        }
+    }
 }

@@ -8,13 +8,13 @@
     <fragment
         android:id="@+id/destination_home"
         android:name="com.thisiskelechi.navigationcomponent.HomeFragment"
-        android:label="fragment_home"
+        android:label="home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/destination_camera"
         android:name="com.thisiskelechi.navigationcomponent.CameraFragment"
-        android:label="fragment_camera"
-        tools:layout="@layout/fragment_camera" >
+        android:label="camera"
+        tools:layout="@layout/fragment_camera">
         <action
             android:id="@+id/next_action"
             app:destination="@id/destination_photos" />
@@ -22,19 +22,19 @@
     <fragment
         android:id="@+id/destination_photos"
         android:name="com.thisiskelechi.navigationcomponent.PhotosFragment"
-        android:label="fragment_photos"
-        tools:layout="@layout/fragment_photos" >
+        android:label="photos"
+        tools:layout="@layout/fragment_photos">
         <action
             android:id="@+id/next_action"
             app:destination="@id/destination_home" />
         <argument
             android:name="numOfPhotos"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/destination_settings"
         android:name="com.thisiskelechi.navigationcomponent.SettingsFragment"
-        android:label="fragment_settings"
+        android:label="settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>
